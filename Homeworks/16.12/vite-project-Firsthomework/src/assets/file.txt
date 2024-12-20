@@ -1,0 +1,15 @@
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 4.9G      2.3G      2.6G  47% /
+devtmpfs                 91.3M         0     91.3M   0% /dev
+#!/bin/bash
+USER ="Heorhii"
+echo "Скрипт запущена из каталога $(pwd)"
+
+   0 cd /tmp
+   1 df -h | head -n 3 > file.txt
+   2 chmod 760 file.txt
+   3 nano ~/myfirstbashscript.sh
+   4 chmod +x ~/myfirstbashsript.sh
+   5 chmod +x ~/myfirstbashscript.sh
+   6 cat ~/myfirstbashscript.sh >> /tmp/file.txt
+   7 history >> /tmp/file.txt

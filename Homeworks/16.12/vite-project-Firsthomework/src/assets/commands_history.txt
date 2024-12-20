@@ -1,0 +1,10 @@
+date
+Modified with text editor
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda1      100000000  45000000  50000000  45% /
+  999  ls
+ 1000  cd /home
+ 1001  history
+cron:x:16:16:Cron Daemon:/var/spool/cron:/usr/sbin/nologin
+cron:x:23:23:At Daemon:/var/spool/atjobs:/usr/sbin/nologin
+2
