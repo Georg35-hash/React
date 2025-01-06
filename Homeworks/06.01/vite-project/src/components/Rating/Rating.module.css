@@ -1,0 +1,44 @@
+.container {
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 500px;
+    height: fit-content;
+
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    width: 400px; /* Уменьшаем ширину */
+    height: 100px; /* Сохраняем пропорции */
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    transition: background-color 0.4s;
+  }
+  
+  .button:hover {
+    background-color: #d0d0d0;
+  }
+  
+  
