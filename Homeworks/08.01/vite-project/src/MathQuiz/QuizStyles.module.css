@@ -1,0 +1,10 @@
+.quizform{ 
+    background-color: #ADD8E6;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 20px;
+}
+button{
+    background: green;
+}   
+
