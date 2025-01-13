@@ -9,12 +9,7 @@ function ShoppingList() {
 
     return (
 
-        <ul>
-            {
-                myList
-            }
-
-        </ul>
+        <ul> {myList} </ul>
 
     )
 }
