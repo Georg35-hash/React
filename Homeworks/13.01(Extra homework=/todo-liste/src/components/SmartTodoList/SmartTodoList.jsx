@@ -43,7 +43,7 @@ export default function SmartTodoList({task}) {
             <form onSubmit={handleSubmit}>
                 {" "}
                 {/* используется при перемещении табами, стрелками, онклик не сработает */}
-                <input   value={newTask} type="text" /> 
+                <input onChange={handleChange} value={newTask} type="text" /> 
                 <button>Add</button>
             </form>
             </div>
