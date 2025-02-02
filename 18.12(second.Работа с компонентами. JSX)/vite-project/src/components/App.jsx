@@ -4,6 +4,7 @@ import Title from './Title';
 import Content from './Content';
 import PokemonList from './PokemonList';
 import MoveList from './MoveList';
+
 function App() {
   const pokemons = [
     { id: 1, name: "Bulbasaur", type: "Grass/Poison" },
@@ -17,6 +18,7 @@ function App() {
     { id: 9, name: "Dragonite", type: "Dragon/Flying" },
     { id: 10, name: "Eevee", type: "Normal" }
   ];
+  
   const movies = [
     { id: 1, title: "Inception", year: "2010" },
     { id: 2, title: "The Matrix", year: "1999" },

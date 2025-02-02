@@ -1,0 +1,28 @@
+.card{
+    width: 150px;
+    height: 150px;
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    background-color: #3f5cc0cc;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+.card:hover{
+    transform: #333 0.6s ease-in-out;
+}
+.flipped{
+    width: 150px;
+    height: 150px;
+    background-color: #47caee;
+    transform: rotateY(180deg);
+}
+.maincomponent{
+    justify-content: center;
+    max-width: 750px;
+    gap: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}

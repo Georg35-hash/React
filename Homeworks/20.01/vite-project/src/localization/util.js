@@ -32,6 +32,4 @@ function getInLanguage(language, element) {
     return currentLanguage[element];
 }
 
-export {
-    getInLanguage,
-};
+export default getInLanguage;
