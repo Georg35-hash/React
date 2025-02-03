@@ -17,6 +17,7 @@ export default function GameBoard() {
               isMatched={card.isMatched}
             />
           ))}
+          
         </div>
        
     );
