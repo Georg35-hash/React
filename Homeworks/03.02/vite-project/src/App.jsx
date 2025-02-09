@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/PagePosts' element={<PagePosts />} />
-        <Route path='/PagePost/:id' element={<PagePost />} /> {/* Добавили маршрут с параметром */}
+        <Route path='/PagePost/:id' element={<PagePost />} />
       </Routes>
     </div>
   );

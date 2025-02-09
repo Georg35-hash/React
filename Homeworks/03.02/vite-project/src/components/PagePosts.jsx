@@ -24,6 +24,8 @@ export default function PagePosts() {
 
     return (
         <div>
+            <p>Cписок постов:</p>
+            
             {posts.map(post => (
                 <li key={post.id}>
                     <Link to={`/PagePost/${post.id}`}>{post.title}</Link>
