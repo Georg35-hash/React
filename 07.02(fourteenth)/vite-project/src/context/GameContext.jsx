@@ -1,56 +1,59 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from "react";
+
 
 export const GameContext = createContext(null);
 
-const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
+const emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"];
 
 export function GameProvider({ children }) {
   const [cards, setCards] = useState(generateCards());
   const [turns, setTurns] = useState(0);
-  const [matchesLeft, setMatchesLeft] = useState(emojis.length);
   const [flippedCards, setFlippedCards] = useState([]);
+  const [matchesLeft, setMatchesLeft] = useState(emojis.length);
   const [win, setWin] = useState(false);
 
-  function handleClick(id) {
-    if (flippedCards.includes(id) || flippedCards.length >= 2 || cards.find(card => card.id === id).isMatched) {
-      return;
+  useEffect(() => {
+    const matchedPairs = cards.filter((card) => card.isMatched).length / 2;
+    setMatchesLeft(emojis.length - matchedPairs);
+  }, [cards]);
+
+  useEffect(() => {
+    if (matchesLeft === 0) {
+      setWin(true);
     }
+  }, [matchesLeft]);
 
-    const clickedCard = cards.find(card => card.id === id);
+  function handleClick(id) {
+    if (flippedCards.length >= 2 || flippedCards.some((card) => card.id === id)) return;
 
-    setCards(prevCards =>
-      prevCards.map(card => (card.id === id ? { ...card, isFlipped: true } : card))
+    const clickedCard = cards.find((card) => card.id === id);
+
+    setCards((prevCards) =>
+      prevCards.map((card) => (card.id === id ? { ...card, isFlipped: true } : card))
     );
 
-    setFlippedCards(prevFlipped => {
+    setFlippedCards((prevFlipped) => {
       const newFlipped = [...prevFlipped, clickedCard];
 
       if (newFlipped.length === 2) {
-        const firstCard = newFlipped[0];
-        const secondCard = clickedCard;
-
-        setTurns(prev => prev + 1);
+        setTurns((prev) => prev + 1);
+        const [firstCard, secondCard] = newFlipped;
 
         if (firstCard.emoji === secondCard.emoji) {
           setTimeout(() => {
-            setCards(prevCards =>
-              prevCards.map(card =>
+            setCards((prevCards) =>
+              prevCards.map((card) =>
                 card.id === firstCard.id || card.id === secondCard.id
                   ? { ...card, isMatched: true }
                   : card
               )
             );
-            setMatchesLeft(prev => prev - 1);
             setFlippedCards([]);
-
-            if (matchesLeft === 1) {
-              setWin(true);
-            }
           }, 500);
         } else {
           setTimeout(() => {
-            setCards(prevCards =>
-              prevCards.map(card =>
+            setCards((prevCards) =>
+              prevCards.map((card) =>
                 card.id === firstCard.id || card.id === secondCard.id
                   ? { ...card, isFlipped: false }
                   : card
@@ -66,7 +69,7 @@ export function GameProvider({ children }) {
 
   function generateCards() {
     const duplicated = [...emojis, ...emojis];
-    const newCards = duplicated.map(emoji => ({
+    const newCards = duplicated.map((emoji) => ({
       id: Math.random(),
       emoji: emoji,
       isFlipped: false,
@@ -85,12 +88,8 @@ export function GameProvider({ children }) {
   }
 
   return (
-    <GameContext.Provider
-      value={{ cards, turns, matchesLeft, handleClick, reset, win }}
-    >
+    <GameContext.Provider value={{ cards, turns, matchesLeft, handleClick, reset, win }}>
       {children}
     </GameContext.Provider>
   );
 }
-
-// Incapsulation is one of basis OOP 

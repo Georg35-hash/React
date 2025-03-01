@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
