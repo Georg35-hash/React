@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const StyledTotal = styled.div`
-  	width: 388px;
+  width: 388px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +9,9 @@ export const StyledTotal = styled.div`
   background-color: #fafafa;
   height: fit-content;
   font-size: 24px;
-  color: rgba(0, 0, 0, .7);
+  color: rgba(0, 0, 0, 0.7);
 
   @media (max-width: 768px) {
-	display: flex;
     width: 100%;
     padding: 20px;
     font-size: 20px;
@@ -79,7 +78,7 @@ export const Action = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
   color: black;
 
   @media (max-width: 768px) {

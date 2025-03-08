@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 export const StyledFooter = styled.footer`
   background-color: #232425;
   width: 100%;
-  padding-top: 64px;
-  padding-bottom: 48px;
+  padding: 64px 20px 48px;
 `;
 
 export const FooterContent = styled.div`
@@ -13,6 +12,13 @@ export const FooterContent = styled.div`
   align-items: center;
   max-width: 1420px;
   margin: 0 auto;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
 `;
 
 export const Info = styled.div`
@@ -24,43 +30,58 @@ export const ContactsInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 13px;
-  margin-top: 39px;
-  margin-bottom: 93px;
-`
+  margin-top: 20px;
+  margin-bottom: 50px;
+`;
 
 export const P = styled.p`
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: var(--font-size-input);
-`
+`;
 
 export const Title = styled.p`
   color: var(--color-text-secondary);
   font-size: 24px;
-`
+`;
+
 export const Copyright = styled(P)`
   font-size: 20px;
-`
+`;
 
 export const OtherContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: end;
-  gap: 170px;
-`
+  align-items: flex-end;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    gap: 30px;
+  }
+`;
 
 export const Links = styled.nav`
   display: flex;
-  gap: 26px;
-`
+  gap: 20px;
+
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
+`;
 
 export const Icon = styled.img`
   width: 32px;
   height: 32px;
-`
+`;
 
 export const StyledInput = styled.input`
-  width: 407px;
-  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  width: 100%;
+  max-width: 400px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 15px;
   color: var(--color-text-secondary);
-`
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+`;

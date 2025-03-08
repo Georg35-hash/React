@@ -4,12 +4,26 @@ then follow to him instructions
 
 
 
-UI/UX library:
-npm install @mui/material @emotion/react @emotion/styled
+
+
+MUI:
+npm i @mui/material @emotion/react @emotion/styled
 
 
 React router-dom:
 npm i react-router-dom 
 
 Redux:
-npm install @reduxjs/toolkit
+npm i @reduxjs/toolkit
+
+Ant Design:
+npm i antd
+
+React Suite:
+npm i rsuite
+
+Swiper:
+npm i swiper
+
+Framer Motion:
+npm i framer-motion
