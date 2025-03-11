@@ -15,22 +15,36 @@ export default function UserList() {
       /^(100|[1-9]?[0-9])$/.test(form.age) &&
       form.email !== ""
     )
-          dispatch(addUser({ ...form, id: Date.now() }));
-      setForm({ name: "", age: 0, email: "" })
+      dispatch(addUser({ ...form, id: Date.now() }));
+    setForm({ name: "", age: 0, email: "" });
   };
 
   return (
     <>
-      <ul>
+      <ul style={{ display: "flex", justifyContent: "center" }}>
         {users.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </ul>
 
       <form onSubmit={handleSubmit}>
-        <input type="text" value={form.name} onChange={(e) => setForm({...form, name:e.target.value})} />
-        <input type="number" min='0' max ='130' value={form.age} onChange={(e) => setForm({...form, age:e.target.value})} />
-        <input type="email" value={form.email} onChange={(e) => setForm({...form, email:e.target.value})}/>
+        <input
+          type="text"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+        <input
+          type="number"
+          min="0"
+          max="130"
+          value={form.age}
+          onChange={(e) => setForm({ ...form, age: e.target.value })}
+        />
+        <input
+          type="email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
 
         <button>Add</button>
       </form>
